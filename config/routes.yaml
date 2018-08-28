@@ -1,0 +1,7 @@
+index:
+    path: /
+    defaults: { _controller: 'App\Controller\JobController::index' }
+
+job_show:
+    path: /job/{id}
+    defaults: { _controller: 'App\Controller\JobController::show' }

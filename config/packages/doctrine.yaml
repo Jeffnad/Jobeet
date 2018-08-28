@@ -1,0 +1,19 @@
+# config/packages/doctrine.yaml
+parameters:
+    env(DATABASE_URL): 'sqlite:///%kernel.project_dir%/var/jobeet.db'
+
+doctrine:
+    dbal:
+        driver: 'pdo_sqlite'
+        url: 'sqlite:////Users/34011-68-15/jobeet/var/jobeet.db'
+    orm:
+        auto_generate_proxy_classes: '%kernel.debug%'
+        naming_strategy: doctrine.orm.naming_strategy.underscore
+        auto_mapping: true
+        mappings:
+            App:
+                is_bundle: false
+                type: yml # annotation ou xml
+                dir: '%kernel.project_dir%/config/doctrine/mapping' # configuration du mapping
+                prefix: 'App\Entity'
+                alias: App
